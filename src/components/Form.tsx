@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 type FormPropsType = {
   setCity: React.Dispatch<React.SetStateAction<string>>;
