@@ -2,15 +2,15 @@ import React from 'react';
 
 type FormPropsType = {
   setCity: React.Dispatch<React.SetStateAction<string>>;
-  getWeather: (e: any) => void; // any型を指定
+  getWeather: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const Form = (props: FormPropsType) => { // propsの型指定でany型を指定
   
   return (
-    <form>
+    <form onSubmit={props.getWeather}>
       <input type="text" name="city" placeholder="city name" onChange={e => props.setCity(e.target.value)}/>
-      <button type="submit" onClick={props.getWeather}>GetWeather</button>
+      <button type="submit">GetWeather</button>
     </form>
   );
 };
